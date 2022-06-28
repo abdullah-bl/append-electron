@@ -26,7 +26,21 @@
  * ```
  */
 
-import './index.css';
+import './styles/index.css'
 import './app'
 
-console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+
+document.addEventListener('load', () => {
+
+
+  const titleBar = document.getElementById('#title-bar')
+
+  titleBar.addEventListener('drag', () => {
+    console.log('drag')
+  })
+
+
+  console.log('👋 This message is being logged by "renderer.js", included via webpack');
+
+})

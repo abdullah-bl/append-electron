@@ -1,11 +1,13 @@
 import * as React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
+import App from './pages'
+import { ThemeProvider } from 'theme-ui'
+import { theme } from './theme'
 
-function render() {
-	ReactDOM.render(
-		<h2 className='font-bold'>Hello from React!</h2>,
-		document.querySelector('#app')
-	)
-}
+const root = ReactDOM.createRoot(document.querySelector('#app'))
 
-render()
+root.render(
+	<ThemeProvider theme={theme}>
+		<App />
+	</ThemeProvider>
+)
